@@ -5,10 +5,44 @@
   --color-secondary: #f6f6f6;
   --color-background: #1d1d1b;
   --color-text: #f6f6f6;
-
   --font-display: 'Celaraz', "serif"
 }
 
 body {
-  background-color: #000; /* Color negro */
+  background-color: #1d1d1b; /* Color negro */
+}
+
+.torn-paper-divider {
+  position: relative;
+  height: 60px;
+  background-color: #ccc; /* Color base */
+  overflow: hidden;
+}
+@layer components {
+  .torn-paper-divider {
+    @apply relative h-24 bg-gray-300 overflow-hidden;
+  }
+
+  .torn-paper-divider::before,
+  .torn-paper-divider::after {
+    @apply content-[''] absolute left-0 right-0;
+  }
+
+  .torn-paper-divider::before {
+    @apply top-[-30px] h-12 bg-white;
+    background-image: 
+      radial-gradient(circle at 30% 20%, #f6f6f6 20px, transparent 21px),
+      radial-gradient(circle at 70% 20%, #f6f6f6 20px, transparent 21px),
+      radial-gradient(circle at 90% 20%, #f6f6f6 20px, transparent 21px),
+      radial-gradient(circle at 10% 20%, #f6f6f6 20px, transparent 21px),
+      radial-gradient(circle at 50% 20%, #f6f6f6 20px, transparent 21px);
+    background-size: 100px 100%;
+    background-position: 0 0, 20px 10px, 40px -5px, 60px 5px, 80px 0px;
+    box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.5);
+  }
+
+  .torn-paper-divider::after {
+    @apply bottom-0 h-12 bg-gradient-to-b from-gray-200 to-gray-300;
+    box-shadow: 0 -10px 20px -10px rgba(0,0,0,0.3);
+  }
 }

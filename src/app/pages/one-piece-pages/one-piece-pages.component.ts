@@ -2,9 +2,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   standalone:true,
-  selector: 'not-found-page',
+  selector: 'one-piece-pages',
   imports: [],
-  templateUrl: './not-found-page.component.html',
+  templateUrl: './one-piece-pages.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class NotFoundPageComponent { }
+export default class OnePiecePagesComponent { }

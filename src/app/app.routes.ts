@@ -1,38 +1,43 @@
 import { Routes } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { ContactPageComponent } from './pages/contact-page/contact-page/contact-page.component';
-import { EventPageComponent } from './pages/event-page/event-page/event-page.component';
-import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
-import { RegistrationPageComponent } from './pages/registration-page/registration-page/registration-page.component';
 
 export const routes: Routes = [
   {
     path: '',
+    title: 'Inicio',
     component: HomePageComponent,
   },
-
   {
-    path: 'Inscripción ',
-    component: RegistrationPageComponent,
+    path: 'magic',
+    title: 'Magic The Gathering',
+    loadComponent: () => import('./pages/magic-page/magic-page.component'),
   },
-
   {
-    path: 'Eventos ',
-    component: EventPageComponent,
+    path: 'starwars',
+    title: 'Star Wars Unlimited',
+    loadComponent: () =>
+      import('./pages/starwars-pages/star-wars-page.component'),
   },
-
   {
-    path: 'Artabrian Nights ',
+    path: 'onepiece',
+    title: 'One Piece',
+    loadComponent: () =>
+      import('./pages/one-piece-pages/one-piece-pages.component'),
+  },
+  {
+    path: 'artabrian-nights',
+    title: 'Artabrian Nights',
     redirectTo: 'https://artabriannights.github.io/',
   },
-
   {
-    path: 'Contacto',
-    component: ContactPageComponent,
+    path: 'contacto',
+    title: 'Contacto',
+    loadComponent: () => import('./pages/contact-page/contact-page.component'),
   },
-
   {
     path: '**',
-    component: NotFoundPageComponent,
+    title: '404',
+    loadComponent: () =>
+      import('./pages/not-found-page/not-found-page.component'),
   },
 ];

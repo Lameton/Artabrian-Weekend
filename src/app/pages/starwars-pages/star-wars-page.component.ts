@@ -2,9 +2,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   standalone:true,
-  selector: 'not-found-page',
+  selector: 'star-wars-page',
   imports: [],
-  templateUrl: './not-found-page.component.html',
+  templateUrl: './star-wars-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class NotFoundPageComponent { }
+export default class StarWarsPageComponent { }

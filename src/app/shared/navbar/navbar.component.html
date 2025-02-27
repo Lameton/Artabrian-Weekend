@@ -1,0 +1,35 @@
+<nav class="top-0 z-50 w-full bg-background border-primary">
+  <div
+    class="flex flex-wrap justify-center mx-auto max-w-screen-xl p-6"
+  >
+
+    <div
+      class="items-center justify-between font-medium hidden w-full md:flex md:w-auto md:order-1"
+    >
+      <ul
+        class="flex flex-col md:p-0 mt-4 border border-primary rounded-lg bg-background md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0"
+      >
+        @for (route of appRoutes; track route) {
+        <li>
+          @if (route.path === 'artabrian-nights') {
+          <a
+            href="https://artabriannights.github.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block py-2 px-3 text-secondary rounded-sm hover:bg-primary hover:text-background md:hover:bg-transparent md:hover:text-yellow-100 md:p-0 transition-transform hover:scale-105 font-bold italic"
+            >{{ route.title }}</a
+          >
+          } @else {
+          <a
+            [routerLink]="route.path"
+            routerLinkActive="text-accent"
+            class="block py-2 px-3 text-primary rounded-sm hover:bg-secondary hover:text-background md:hover:bg-transparent md:hover:text-secondary md:p-0 transition-transform hover:scale-105 font-bold"
+            >{{ route.title }}</a
+          >
+          }
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+</nav>
