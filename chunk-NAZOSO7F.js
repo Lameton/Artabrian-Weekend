@@ -1,0 +1,1 @@
+import{La as c,Ma as t,Va as n,xa as o}from"./chunk-TRUN74UB.js";var a=class i{static \u0275fac=function(e){return new(e||i)};static \u0275cmp=o({type:i,selectors:[["magic-page"]],decls:4,vars:0,consts:[[1,"mt-10"]],template:function(e,p){e&1&&(c(0,"main",0)(1,"p"),n(2,"magic-page works!"),t(),n(3,", "),t())},encapsulation:2,changeDetection:0})};export{a as default};
